@@ -69,6 +69,58 @@ function verificar_correo($correo)
  * @param  id $id_user
  * @return array
  */
+function create_user( $firstname , $lastname, $email , $password, $rol )
+{
+    
+    global $conexion;
+    mysqli_autocommit($conexion, false);
+    $response = array('num' => 2, 'msj' => null, 'data' => null );
+    $datos = array();
+
+    $firstname  = htmlspecialchars(strip_tags($firstname));
+    $lastname   = htmlspecialchars(strip_tags($lastname));
+    $email      = htmlspecialchars(strip_tags($email));
+    $password   = htmlspecialchars(strip_tags($password));
+    $rol        = htmlspecialchars(strip_tags($rol));
+    $email      = strtolower( $email );
+
+    $pwd_hash = password_hash($password, PASSWORD_DEFAULT);
+	$datos = array(
+		'firstname' 	=> $firstname,
+		'lastname' 	    => $lastname,
+		'email' 		=> $email,
+		'password' 		=> $pwd_hash,
+		'pr_id' 		=> $rol,
+	);
+
+    $query = insert('users', $datos);
+    $resultado  = $conexion->query($query);
+    if($resultado) 
+    {
+        $response['num'] = 1;
+        $response['msj'] = 'Correcto';
+    } 
+    else 
+    {
+        $response['num'] = 2;
+        $response['msj'] = 'No se pudo crear el usuario.';
+    }
+
+    if ($response['num'] == 1) 
+		mysqli_commit($conexion);
+
+    return $response;
+
+}
+
+/**
+ * Funcion para crear los posts
+ *
+ * @param  string $title
+ * @param  string $description
+ * @param  id $id_user
+ * @return array
+ */
 function create_post( $title , $description , $id_user )
 {
     

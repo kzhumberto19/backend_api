@@ -2,10 +2,36 @@
 Proyecto CRUD + Login en PHP por medio de APIS Y JWT
 
 Login API
+Este usuario tiene el acceso total | Admin
 {
     "email" : "kh17728@gmail.com",
     "password" : "123456"
 }
+
+Solo permisos de acceso
+{
+    "email" : "felipe01@gmail.com",
+    "password" : "123456"
+}
+
+Solo permisos de acceso y consulta
+{
+    "email" : "lourdes@gmail.com",
+    "password" : "123456"
+}
+
+Solo permisos de acceso y agregar
+{
+    "email" : "guillen@gmail.com",
+    "password" : "123456"
+}
+
+Solo permisos de acceso,consulta,agregar y actualizar
+{
+    "email" : "jimenez@gmail.com",
+    "password" : "123456"
+}
+
 
 Create Post
 {

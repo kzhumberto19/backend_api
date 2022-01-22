@@ -25,10 +25,10 @@ if (strtoupper($_SERVER["REQUEST_METHOD"]) == 'DELETE')
                     $rol_id = isset($user_details->data->rol) ? $user_details->data->rol : "";
                     $permisos = permisos( $rol_id  );
                     $validar_acceso = validar_permisos( 'accesar',$permisos['data'] );
-                    $validar_crear = validar_permisos( 'delete',$permisos['data'] );
+                    $validar_eliminar = validar_permisos( 'eliminar',$permisos['data'] );
                     if( $validar_acceso['num'] == 1 )
                     {
-                        if( $validar_crear['num'] == 1 )
+                        if( $validar_eliminar['num'] == 1 )
                         {
                             http_response_code(200);
                             $response = delete_post( $datos->id);
@@ -41,13 +41,13 @@ if (strtoupper($_SERVER["REQUEST_METHOD"]) == 'DELETE')
                         else
                         {
                             http_response_code(401);
-                            echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => $permisos['data']));
+                            echo json_encode(array("message" => $validar_eliminar['message'] ,"error" => true, "data" => null));
                         }
                     }
                     else
                     {
                         http_response_code(401);
-                        echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => $permisos['data']));
+                        echo json_encode(array("message" => $validar_eliminar['message'] ,"error" => true, "data" => null));
                     }
 
                 }

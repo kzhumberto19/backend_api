@@ -122,6 +122,10 @@ function validar_permisos( $accion , $permisos )
                 $response['message'] = 'No cuentas con los permisos necesarios para accesar.';
             }
             break;
+        default:
+            $response['num'] = 2;
+            $response['message'] = 'No tienes permisos asignados.';
+        break;
     }
 
     if( $permisos == null ){

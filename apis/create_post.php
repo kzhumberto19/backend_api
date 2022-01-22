@@ -43,13 +43,13 @@ if (strtoupper($_SERVER["REQUEST_METHOD"]) == 'POST')
                         else
                         {
                             http_response_code(401);
-                            echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => $permisos['data']));
+                            echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => null));
                         }
                     }
                     else
                     {
                         http_response_code(401);
-                        echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => $permisos['data']));
+                        echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => null));
                     }
 
                 }

@@ -19,10 +19,10 @@ if (strtoupper($_SERVER["REQUEST_METHOD"]) == 'GET')
             $rol_id = isset($user_details->data->rol) ? $user_details->data->rol : "";
             $permisos = permisos( $rol_id  );
             $validar_acceso = validar_permisos( 'accesar',$permisos['data'] );
-            $validar_crear = validar_permisos( 'consultar',$permisos['data'] );
+            $validar_consultar = validar_permisos( 'consultar',$permisos['data'] );
             if( $validar_acceso['num'] == 1 )
             {
-                if( $validar_crear['num'] == 1 )
+                if( $validar_consultar['num'] == 1 )
                 {
                     http_response_code(200);
                     $response = show_post( $id );
@@ -35,13 +35,13 @@ if (strtoupper($_SERVER["REQUEST_METHOD"]) == 'GET')
                 else
                 {
                     http_response_code(401);
-                    echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => $permisos['data']));
+                    echo json_encode(array("message" => $validar_consultar['message'] ,"error" => true, "data" => null));
                 }
             }
             else
             {
                 http_response_code(401);
-                echo json_encode(array("message" => $validar_crear['message'] ,"error" => true, "data" => $permisos['data']));
+                echo json_encode(array("message" => $validar_consultar['message'] ,"error" => true, "data" => null));
             }
 
         }

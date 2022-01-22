@@ -1,5 +1,5 @@
 # backend_api
-Proyecto CRUD + Login en PHP por medio de APIS Y JWT
+Proyecto CRUD + Login en PHP por medio de APIS JWT Y Mysql 8 Google cloud
 
 Login API
 Este usuario tiene el acceso total | Admin
@@ -32,7 +32,7 @@ Solo permisos de acceso,consulta,agregar y actualizar
     "password" : "123456"
 }
 
-
+Todo es enviado por JSON desde el body
 Create Post
 {
     "title" 		: "test",
@@ -56,7 +56,7 @@ Delete Post
 	"token"         : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDI4MzkwMzksImlhdCI6MTY0MjgzNTQzOSwiZGF0YSI6eyJpZCI6IjEiLCJmaXJzdG5hbWUiOiJIdW1iZXJ0byIsImxhc3RuYW1lIjoiSGVybmFuZGV6IiwiZW1haWwiOiJraDE3NzI4QGdtYWlsLmNvbSIsInJvbCI6IjUifX0.G6OR1ay_jfoJYVTv78s7m_6EmIemJPFYxBCQyhk5z3o"
 }
 
-
+Parametros enviados por GET
 index Post
 http://geniat.test/?api=index_posts&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NDI4MzgxMzAsImlhdCI6MTY0MjgzNDUzMCwiZGF0YSI6eyJpZCI6IjEiLCJmaXJzdG5hbWUiOiJIdW1iZXJ0byIsImxhc3RuYW1lIjoiSGVybmFuZGV6IiwiZW1haWwiOiJraDE3NzI4QGdtYWlsLmNvbSIsInJvbCI6IjUifX0.vsaC2MBJ_Fi6l8PjRx1MVgnMgn9GbqkYZt3XrJxLvQc
 

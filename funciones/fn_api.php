@@ -126,6 +126,8 @@ function update_post( $title , $description , $id_post )
 	);
 
     $query = update('post',$datos,"id = $id_post");
+    // echo json_encode($query);
+    // die;
     $resultado  = $conexion->query($query);
     if($resultado) 
     {

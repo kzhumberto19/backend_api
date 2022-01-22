@@ -1,9 +1,9 @@
 <?php
 function conexion()
 {
-    global $db_host, $db_user, $db_pwd, $db_database;
+    $google_cloud = "/cloudsql/celtic-iridium-332206:us-central1:cloudhumberto19";
     $conexion = false;
-    $conexion = @mysqli_connect("127.0.0.1", "root", "", "geniat");;
+    $conexion = @mysqli_connect('34.132.199.73', "root", "humberto123", "geniat",null,$google_cloud);
     if (!$conexion) {
         return $conexion;
     }

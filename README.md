@@ -1,7 +1,8 @@
-# backend_api
+# APIS
 Proyecto CRUD + Login en PHP por medio de APIS JWT Y Mysql 8 Google cloud
 
 Ruta de las APIS:
+http://geniat.test/?api=create_user
 http://geniat.test/?api=login
 http://geniat.test/?api=index_posts
 http://geniat.test/?api=show_post&token=1234&id=1
@@ -9,8 +10,8 @@ http://geniat.test/?api=create_post
 http://geniat.test/?api=delete_post
 http://geniat.test/?api=update_post
 
+Usuarios con roles
 
-Login API
 Este usuario tiene el acceso total | Admin
 {
     "email" : "kh17728@gmail.com",
@@ -42,6 +43,22 @@ Solo permisos de acceso,consulta,agregar y actualizar
 }
 
 Todo es enviado por JSON desde el body
+
+Login API
+{
+    "email" : "kh17728@gmail.com",
+    "password" : "123456"
+}
+
+Crear Usuario
+{
+    "firstname" : "Jenifer",
+    "lastname" : "Lopez",
+    "email" : "test@gmail.com",
+    "password" : "123456789",
+    "rol" : 1
+}
+
 Create Post
 {
     "title" 		: "test",
